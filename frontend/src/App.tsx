@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CreateExpert, ExpertList, Experts } from "./experts/experts";
+import { CreateInnovator, InnovatorList, Innovators } from "./innovators/innovators";
 import { Main } from "./main/main";
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
             <Route path=":expertId" element={<Expert />} />
             <Route path="create" element={<CreateExpert />} />
           </Route>
-          <Route path="innovations" element={<Innovations />}>
+          <Route path="innovators" element={<Innovators />}>
+            <Route index element={<InnovatorList />} />
             <Route path=":innovationId" element={<Innovation />} />
-            <Route path="create" element={<CreateInnovation />} />
+            <Route path="create" element={<CreateInnovator />} />
           </Route>
           <Route path="matcher" element={<Matcher />} />
         </Route>
