@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Outlet, useNavigate } from "react-router-dom";
 import { CenteredSpinner, InputGroup, MainWrapper } from "../common/components";
+import { ExpertCard } from "./expertcard";
 import { expertiseTypes, ExpertType, industryTypes } from "./experttypes";
 
 const Experts = () => {
@@ -36,9 +37,7 @@ const ExpertList = () => {
     <>
       {experts &&
         experts.map((expert) => (
-          <div key={expert.id}>
-            {expert.firstName} {expert.lastName}
-          </div>
+          <ExpertCard expert={expert}/>
         ))}
       {(!experts || experts?.length === 0) && <CenteredSpinner />}
     </>
