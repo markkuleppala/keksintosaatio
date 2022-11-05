@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Outlet, useNavigate } from "react-router-dom";
-import { CenteredSpinner, InputGroup, MainWrapper } from "../common/components";
+import { CenteredSpinner, InputGroup, MainWrapper, ListingWrapper } from "../common/components";
 import { expertiseTypes, InnovatorType, industryTypes, maturityTypes } from "./innovatortypes";
+import styled from "styled-components";
 
 const Innovators = () => {
   return (
@@ -16,7 +17,7 @@ const Innovators = () => {
 };
 
 const InnovatorList = () => {
-  const [experts, setExperts] = useState<InnovatorType[]>([]);
+  const [innovators, setInnovators] = useState<InnovatorType[]>([]);
   useEffect(() => {
     const fetchInnovators = async () => {
       try {
@@ -24,7 +25,7 @@ const InnovatorList = () => {
           "https://mockend.com/markkuleppala/keksintosaatio-mockend/inventors"
         );
         const json = await res.json();
-        setExperts(json);
+        setInnovators(json);
       } catch (error) {
         console.log(error);
       }
@@ -35,14 +36,19 @@ const InnovatorList = () => {
 
   return (
     <>
-      {experts &&
-        experts.map((expert) => (
-          <div key={expert.id}>
-            {expert.firstName} {expert.lastName}
-            <Link to={`matches/${expert.id}`}>Find expert matches</Link>
-          </div>
+      {innovators &&
+        innovators.map((innovator) => (
+            <ListingWrapper>
+            <div key={innovator.id}>
+              {innovator.firstName} {innovator.lastName} 
+              <StyledLink to={`${innovator.id}/matches`}>Find expert matches</StyledLink>
+              <br></br>
+              Idea name: {innovator.ideaName}
+              <br></br>
+            </div>
+            </ListingWrapper>
         ))}
-      {(!experts || experts?.length === 0) && <CenteredSpinner />}
+      {(!innovators || innovators?.length === 0) && <CenteredSpinner />}
     </>
   );
 };
@@ -61,7 +67,7 @@ const CreateInnovator = () => {
     )
       .then((resp) => {
         console.log(resp);
-        //navigate("/experts");
+        //navigate("/innovators");
       })
       .catch((error) => {
         console.log("errorerror");
@@ -131,5 +137,11 @@ const CreateInnovator = () => {
     </form>
   );
 };
+
+
+const StyledLink = styled(Link)`
+  padding-left: 0.5rem;
+`;
+
 
 export { Innovators, InnovatorList, CreateInnovator };

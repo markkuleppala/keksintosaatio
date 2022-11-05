@@ -9,8 +9,8 @@ const Main = () => {
         <img src={logo} alt="logo" />
         <div>InnovationTinder</div>
         <MainLinks>
-          <Link to={"/innovators"}>Innovators</Link>
-          <Link to={"/experts"}>Experts</Link>
+          <StyledLink to={"/innovators"}>Innovators</StyledLink>
+          <StyledLink to={"/experts"}>Experts</StyledLink>
         </MainLinks>
       </MainHeader>
       <Outlet />
@@ -29,5 +29,9 @@ const MainHeader = styled.header`
 `;
 
 const MainLinks = styled.div``;
+
+const StyledLink = styled(Link)`
+  padding: 0.5rem;
+`;
 
 export { Main };

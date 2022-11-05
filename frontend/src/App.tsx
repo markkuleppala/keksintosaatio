@@ -18,7 +18,7 @@ function App() {
             <Route index element={<InnovatorList />} />
             <Route path=":innovationId" element={<Innovation />} />
             <Route path="create" element={<CreateInnovator />} />
-            <Route path="matches/:id" element={<Matches />} />
+            <Route path=":id/matches" element={<Matches />} />
           </Route>
         </Route>
       </Routes>
