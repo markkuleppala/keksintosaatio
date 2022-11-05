@@ -25,26 +25,6 @@ const W_EXPERIENCE = 0.15
 const EXPERIENCE_MAX = 25
 const EXPERTS_TO_RETURN = 5
 
-function scoring_helper(expert) {
-    return expert[1]
-}
-
-const zip = (...arr) => {
-    const zipped = [];
-    arr.forEach((element, ind) => {
-       element.forEach((el, index) => {
-          if(!zipped[index]){
-             zipped[index] = [];
-          };
-          if(!zipped[index][ind]){
-             zipped[index][ind] = [];
-          }
-          zipped[index][ind] = el || '';
-       })
-    });
-    return zipped;
- };
-
 function scoring(inventor, experts) {
     var scores = [];
     for (const expert of experts) {
@@ -60,7 +40,7 @@ function scoring(inventor, experts) {
     }
     var expert_scores = _.sortBy(_.zip(experts,scores), [function(o) { return o[1]; }]);
 
-    return expert_scores.slice(-5)
+    return expert_scores.slice(-EXPERTS_TO_RETURN)
 
 }
 
