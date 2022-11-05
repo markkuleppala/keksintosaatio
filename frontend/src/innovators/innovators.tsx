@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { Outlet, useNavigate } from "react-router-dom";
 import { CenteredSpinner, InputGroup, MainWrapper } from "../common/components";
 import { expertiseTypes, InnovatorType, industryTypes, maturityTypes } from "./innovatortypes";
@@ -38,6 +39,7 @@ const InnovatorList = () => {
         experts.map((expert) => (
           <div key={expert.id}>
             {expert.firstName} {expert.lastName}
+            <Link to={`matches/${expert.id}`}>Find expert matches</Link>
           </div>
         ))}
       {(!experts || experts?.length === 0) && <CenteredSpinner />}

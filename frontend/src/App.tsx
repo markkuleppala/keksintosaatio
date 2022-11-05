@@ -18,8 +18,8 @@ function App() {
             <Route index element={<InnovatorList />} />
             <Route path=":innovationId" element={<Innovation />} />
             <Route path="create" element={<CreateInnovator />} />
+            <Route path="matches/:id" element={<Matches />} />
           </Route>
-          <Route path="matcher" element={<Matcher />} />
         </Route>
       </Routes>
     </BrowserRouter>
@@ -42,7 +42,7 @@ const CreateInnovation = () => {
   return <div></div>;
 };
 
-const Matcher = () => {
+const Matches = () => {
   return <div></div>;
 };
 
