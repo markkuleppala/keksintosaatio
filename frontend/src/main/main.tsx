@@ -9,7 +9,6 @@ const Main = () => {
         <img src={logo} alt="logo" />
         <div>InnovationTinder</div>
         <MainLinks>
-          <Link to={"/matcher"}>Mathcer</Link>
           <Link to={"/innovations"}>Innovations</Link>
           <Link to={"/experts"}>Experts</Link>
         </MainLinks>
