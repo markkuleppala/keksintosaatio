@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CreateExpert, ExpertList, Experts } from "./experts/experts";
 import { Main } from "./main/main";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />}>
           <Route path="experts" element={<Experts />}>
+            <Route index element={<ExpertList />} />
             <Route path=":expertId" element={<Expert />} />
             <Route path="create" element={<CreateExpert />} />
           </Route>
@@ -22,15 +24,7 @@ function App() {
   );
 }
 
-const Experts = () => {
-  return <div></div>;
-};
-
 const Expert = () => {
-  return <div></div>;
-};
-
-const CreateExpert = () => {
   return <div></div>;
 };
 
