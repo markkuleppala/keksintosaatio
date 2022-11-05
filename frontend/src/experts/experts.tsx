@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { CenteredSpinner, InputGroup, MainWrapper } from "../common/components";
 import { expertiseTypes, ExpertType, industryTypes } from "./experttypes";
 
