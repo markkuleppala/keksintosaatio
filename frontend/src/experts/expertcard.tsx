@@ -16,7 +16,7 @@ export const ExpertCard = ({ expert }: ExpertCardProps) => {
           {expert.expertise} ({expert.experience} years)
         </div>
       </CardInfo>
-      <h3>{expert.score && `${expert.score * 100}%`}</h3>
+      <h3>{expert.score && `${Math.round(expert.score * 100)}%`}</h3>
     </CardWrapper>
   );
 };
