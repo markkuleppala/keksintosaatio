@@ -40,4 +40,9 @@ const InputGroup = styled.div`
   padding: 0.5rem;
 `;
 
-export { MainWrapper, Spinner, CenteredSpinner, InputGroup };
+const ListingWrapper = styled.div`
+  max-width: 960px;
+  padding: 1rem;
+`;
+
+export { MainWrapper, Spinner, CenteredSpinner, InputGroup, ListingWrapper };

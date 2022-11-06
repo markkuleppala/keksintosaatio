@@ -6,11 +6,13 @@ const Main = () => {
   return (
     <>
       <MainHeader>
-        <img src={logo} alt="logo" />
-        <div>InnovationTinder</div>
+        <Link to={"/"}>
+          <img src={logo} alt="logo" />
+        </Link>
+        <div>Innovator-Expert Matcher</div>
         <MainLinks>
-          <Link to={"/innovations"}>Innovations</Link>
-          <Link to={"/experts"}>Experts</Link>
+          <StyledLink to={"/innovators"}>Innovators</StyledLink>
+          <StyledLink to={"/experts"}>Experts</StyledLink>
         </MainLinks>
       </MainHeader>
       <Outlet />
@@ -29,5 +31,9 @@ const MainHeader = styled.header`
 `;
 
 const MainLinks = styled.div``;
+
+const StyledLink = styled(Link)`
+  padding: 0.5rem;
+`;
 
 export { Main };

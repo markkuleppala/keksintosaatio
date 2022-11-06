@@ -1,12 +1,12 @@
-export interface ExpertType {
+export interface InnovatorType {
   id: number;
-  experience: number;
   expertise: string;
   firstName: string;
   industry: string;
   lastName: string;
   maturity: string;
-  score?: number;
+  ideaName: string;
+  ideaDescription: string;
 }
 
 export const industryTypes = [
@@ -42,4 +42,12 @@ export const expertiseTypes = [
   "Finance",
   "Legal",
   "HR",
+];
+
+export const maturityTypes = [
+  "Ideating", 
+  "Prototyping", 
+  "Commercializing", 
+  "Scaling", 
+  "Funding",
 ];
