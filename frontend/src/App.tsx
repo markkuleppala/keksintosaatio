@@ -43,8 +43,8 @@ const Innovation = () => {
 const ProjectInfo = () => {
   return(
   <div>
-    <h1>Prototype of inventor tinder</h1>
-    <p>This is a prototype of the matching algorithm for "Inventor tinder" project at Junction 2022.<br></br>
+    <h1>Prototype of InnovationTinder</h1>
+    <p>This is a prototype of the matching algorithm for "InnovationTinder" project at Junction 2022.<br></br>
     Get to know our problem and solution in detail from here: 
      <Link to="https://github.com/markkuleppala/keksintosaatio/blob/innovator/Solution-Junction2022.pdf" target="_blanc">https://github.com/markkuleppala/keksintosaatio/blob/main/Solution-Junction2022.pdf</Link></p>
     <h3>Instructions to test matching:</h3>
