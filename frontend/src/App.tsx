@@ -1,9 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CreateExpert, ExpertList, Experts } from "./experts/experts";
-import { CreateInnovator, InnovatorList, Innovators } from "./innovators/innovators";
+import {
+  CreateInnovator,
+  InnovatorList,
+  Innovators,
+} from "./innovators/innovators";
 import { Main } from "./main/main";
 import junction from "./assets/junction.png";
+import { Matches } from "./innovators/matches";
 
 function App() {
   return (
@@ -44,20 +49,17 @@ const CreateInnovation = () => {
   return <div></div>;
 };
 
-const Matches = () => {
-  return <div></div>;
-};
-
 const ProjectInfo = () => {
-  return(
-  <div>
-    <h1>Prototype of inventor tinder</h1>
-    <p>This is a prototype of the matching algorithm for "Inventor tinder" project at Junction 2022.<br></br>Get to know our problem and solution in detail from here:
-    </p>
-  
-  </div>
+  return (
+    <div>
+      <h1>Prototype of inventor tinder</h1>
+      <p>
+        This is a prototype of the matching algorithm for "Inventor tinder"
+        project at Junction 2022.<br></br>Get to know our problem and solution
+        in detail from here:
+      </p>
+    </div>
   );
 };
-
 
 export default App;
