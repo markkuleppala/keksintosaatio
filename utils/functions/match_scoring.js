@@ -31,28 +31,29 @@ const EXPERTS_TO_RETURN = 5;
 function scoring(inventor, experts) {
   const scores = [];
 
-  for (const expert of experts.data) {
+  // for (const expert of experts.data)
+  for (let i = 0; i < experts.data.length; i++) {
     // console.log(expert);
     let score = 0.0;
-    if (expert["maturity"].includes(inventor["maturity"])) {
+    if (experts.data[i]["maturity"].includes(inventor["maturity"])) {
       score += W_MATURITY;
     }
-    if (expert["industry"].includes(inventor["industry"])) {
+    if (experts.data[i]["industry"].includes(inventor["industry"])) {
       score += W_INDUSTRY;
     }
-    if (expert["expertise"].includes(inventor["expertise"])) {
+    if (experts.data[i]["expertise"].includes(inventor["expertise"])) {
       score += W_EXPERTISE;
     }
-    score += expert["experience"] / EXPERIENCE_MAX * W_EXPERIENCE;
-    // expert["score"] = score;
+    score += experts.data[i]["experience"] / EXPERIENCE_MAX * W_EXPERIENCE;
+    experts.data[i]["score"] = score;
     scores.push(score);
   }
 
-  const expertScores = _.sortBy(_.zip(experts.data, scores), [function(o) {
-    return o[1];
+  const expertScor = _.sortBy(experts.data, [function(o) {
+    return o["score"];
   }]);
 
-  return expertScores.slice(-EXPERTS_TO_RETURN);
+  return expertScor.slice(-EXPERTS_TO_RETURN);
 }
 
 /** Main */
