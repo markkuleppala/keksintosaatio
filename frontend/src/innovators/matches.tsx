@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { CenteredSpinner } from "../common/components";
 import { ExpertCard } from "../experts/expertcard";
 import { ExpertType } from "../experts/experttypes";
-import { expertiseTypes, InnovatorType } from "./innovatortypes";
+import { InnovatorType } from "./innovatortypes";
 
 async function getInnovator(id: string): Promise<InnovatorType> {
   const inventor = await fetch(
