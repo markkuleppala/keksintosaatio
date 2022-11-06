@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { CreateExpert, ExpertList, Experts } from "./experts/experts";
 import {
   CreateInnovator,
@@ -41,15 +41,19 @@ const Innovation = () => {
 };
 
 const ProjectInfo = () => {
-  return (
-    <div>
-      <h1>Prototype of inventor tinder</h1>
-      <p>
-        This is a prototype of the matching algorithm for "Inventor tinder"
-        project at Junction 2022.<br></br>Get to know our problem and solution
-        in detail from here:
-      </p>
-    </div>
+  return(
+  <div>
+    <h1>Prototype of inventor tinder</h1>
+    <p>This is a prototype of the matching algorithm for "Inventor tinder" project at Junction 2022.<br></br>
+    Get to know our problem and solution in detail from here: 
+     <Link to="https://github.com/markkuleppala/keksintosaatio/blob/innovator/Solution-Junction2022.pdf" target="_blanc">https://github.com/markkuleppala/keksintosaatio/blob/main/Solution-Junction2022.pdf</Link></p>
+    <h3>Instructions to test matching:</h3>
+    <ol>
+      <li>Go to inventors -section</li>
+      <li>Next to an inventor, select "Find expert matches"</li>
+      <li>A request will be sent to compare the inventor information against the experts, and list of potentially relevant experts is returned.</li>
+    </ol>
+  </div>
   );
 };
 
