@@ -1,9 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { CreateExpert, ExpertList, Experts } from "./experts/experts";
-import { CreateInnovator, InnovatorList, Innovators } from "./innovators/innovators";
+import {
+  CreateInnovator,
+  InnovatorList,
+  Innovators,
+} from "./innovators/innovators";
 import { Main } from "./main/main";
-import majava from "./assets/majava1.png";
+import junction from "./assets/junction.png";
+import { Matches } from "./innovators/matches";
 
 function App() {
   return (
@@ -44,10 +49,6 @@ const CreateInnovation = () => {
   return <div></div>;
 };
 
-const Matches = () => {
-  return <div></div>;
-};
-
 const ProjectInfo = () => {
   return(
   <div>
@@ -64,6 +65,5 @@ const ProjectInfo = () => {
   </div>
   );
 };
-
 
 export default App;
