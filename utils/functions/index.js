@@ -9,9 +9,9 @@ const app = express();
 app.use(cors({origin: true}));
 
 /** build multiple CRUD interfaces: */
-app.post("/", (req, res) => {
-  const matches = matchInventor(req.body);
-  // res.send({"mock": "match"});
+app.post("/", async (req, res) => {
+  const matches = await matchInventor(req.body);
+  console.log(matches);
   res.send(matches);
 });
 

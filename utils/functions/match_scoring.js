@@ -44,6 +44,7 @@ function scoring(inventor, experts) {
       score += W_EXPERTISE;
     }
     score += expert["experience"] / EXPERIENCE_MAX * W_EXPERIENCE;
+    // expert["score"] = score;
     scores.push(score);
   }
 
@@ -54,12 +55,14 @@ function scoring(inventor, experts) {
   return expertScores.slice(-EXPERTS_TO_RETURN);
 }
 
-/** TTT */
+/** Main */
 module.exports = async function matchInventor(inventor) {
   console.log(inventor);
   try {
     const experts = await getExperts();
-    return scoring(inventor, experts);
+    const expertScoring = scoring(inventor, experts);
+    // console.log(expertScoring);
+    return expertScoring;
   } catch (err) {
     console.log(err);
   }
