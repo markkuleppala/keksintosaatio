@@ -6,8 +6,10 @@ const Main = () => {
   return (
     <>
       <MainHeader>
-        <Link to={"/"}><img src={logo} alt="logo" /></Link>
-        <div>InnovationTinder</div>
+        <Link to={"/"}>
+          <img src={logo} alt="logo" />
+        </Link>
+        <div>Innovator-Expert Matcher</div>
         <MainLinks>
           <StyledLink to={"/innovators"}>Innovators</StyledLink>
           <StyledLink to={"/experts"}>Experts</StyledLink>
