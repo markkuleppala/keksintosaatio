@@ -9,6 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />}>
+          <Route index element={<ProjectInfo />} />
           <Route path="experts" element={<Experts />}>
             <Route index element={<ExpertList />} />
             <Route path=":expertId" element={<Expert />} />
@@ -45,5 +46,10 @@ const CreateInnovation = () => {
 const Matches = () => {
   return <div></div>;
 };
+
+const ProjectInfo = () => {
+  return <div>Infoa!</div>;
+};
+
 
 export default App;
