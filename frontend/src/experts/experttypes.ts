@@ -6,6 +6,7 @@ export interface ExpertType {
   industry: string;
   lastName: string;
   maturity: string;
+  score?: number;
 }
 
 export const industryTypes = [

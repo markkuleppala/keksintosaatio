@@ -7,7 +7,6 @@ import {
   Innovators,
 } from "./innovators/innovators";
 import { Main } from "./main/main";
-import junction from "./assets/junction.png";
 import { Matches } from "./innovators/matches";
 
 function App() {
@@ -37,15 +36,7 @@ const Expert = () => {
   return <div></div>;
 };
 
-const Innovations = () => {
-  return <div></div>;
-};
-
 const Innovation = () => {
-  return <div></div>;
-};
-
-const CreateInnovation = () => {
   return <div></div>;
 };
 

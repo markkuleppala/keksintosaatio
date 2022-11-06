@@ -1,9 +1,13 @@
-import { ExpertType } from "./experttypes"
+import { ExpertType } from "./experttypes";
 
 interface ExpertCardProps {
-    expert: ExpertType
+  expert: ExpertType;
 }
 
-export const ExpertCard = ({expert}: ExpertCardProps) => {
-    return <div>{expert.firstName} {expert.lastName}</div>
-}
+export const ExpertCard = ({ expert }: ExpertCardProps) => {
+  return (
+    <div>
+      {expert.score && `[${expert.score}]`} {expert.firstName} {expert.lastName}
+    </div>
+  );
+};

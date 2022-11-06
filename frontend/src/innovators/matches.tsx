@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CenteredSpinner } from "../common/components";
+import { ExpertCard } from "../experts/expertcard";
 import { ExpertType } from "../experts/experttypes";
 import { InnovatorType } from "./innovatortypes";
 
@@ -13,7 +14,6 @@ async function getInnovator(id: string): Promise<InnovatorType> {
 }
 
 async function getMatches(innovator: InnovatorType): Promise<ExpertType[]> {
-  console.log(innovator);
   const matches = await fetch(
     `https://us-central1-junction-keksintosaatio.cloudfunctions.net/matches/`,
     { method: "POST", mode: "no-cors", body: JSON.stringify(innovator) }
@@ -47,7 +47,7 @@ const Matches = () => {
         </h2>
       )}
       {!matches && <CenteredSpinner />}
-      {matches && matches.map((match) => <div>{match.lastName}</div>)}
+      {matches && matches.map((match) => <ExpertCard expert={match} />)}
     </>
   );
 };

@@ -36,9 +36,7 @@ const ExpertList = () => {
   return (
     <>
       {experts &&
-        experts.map((expert) => (
-          <ExpertCard expert={expert}/>
-        ))}
+        experts.map((expert) => <ExpertCard expert={expert} key={expert.id} />)}
       {(!experts || experts?.length === 0) && <CenteredSpinner />}
     </>
   );
